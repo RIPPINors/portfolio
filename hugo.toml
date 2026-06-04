@@ -1,0 +1,39 @@
+baseURL = 'https://twojadomena.pl/'
+languageCode = 'pl-PL'
+title = 'Antoni Góralewski | Portfolio'
+# Zostaw puste, jeśli budujesz layout bezpośrednio w folderze /layouts/
+
+# Włączenie trybu bezpiecznego dla HTML w Markdownie (przydaje się przy osadzaniu np. iframe z wideo czy audio)
+[markup.goldmark.renderer]
+unsafe = true
+
+# Konfiguracja parametrów globalnych (.Site.Params)
+[params]
+  author = 'Antoni Góralewski'
+  description = 'Portfolio inżynierskie: mechatronika, automatyka przemysłowa (PLC S7-1200), systemy UNIX oraz produkcja radiowa.'
+  
+  # Tu możesz zdefiniować linki do swoich profili, żeby później wywołać je w stopce
+  github = 'https://github.com/twoj-profil'
+  linkedin = 'https://linkedin.com/in/twoj-profil'
+
+# Menu główne - to powiąże się z nawigacją w headerze
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name = "O mnie"
+    url = "/o-mnie/"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "projects"
+    name = "Projekty"
+    url = "/projekty/"
+    weight = 20
+
+  [[menu.main]]
+    identifier = "contact"
+    name = "Kontakt"
+    url = "/kontakt/"
+    weight = 30
+
+

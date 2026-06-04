@@ -1,0 +1,46 @@
+{{ define "main" }}
+<div class="max-w-4xl mx-auto">
+    <h1 class="text-3xl font-bold mb-8 border-b pb-4 text-gray-900">{{ .Title }}</h1>
+    
+    <div class="flex flex-col space-y-6">
+        {{ range .Pages }}
+        
+        {{ $targetLink := .Permalink }}
+        {{ $targetAttr := "" }}
+        {{ if .Params.github_url }}
+            {{ $targetLink = .Params.github_url }}
+            {{ $targetAttr = "target=\"_blank\" rel=\"noopener noreferrer\"" | safeHTMLAttr }}
+        {{ end }}
+
+        <a href="{{ $targetLink }}" {{ $targetAttr }} class="block border border-gray-200 rounded-lg p-6 bg-white shadow-sm hover:shadow-lg hover:border-blue-400 transition duration-200 group relative overflow-hidden">
+            
+            <div class="flex justify-between items-start">
+                <div class="pr-8">
+                    <h2 class="text-2xl font-bold text-gray-800 group-hover:text-blue-600 transition mb-2">
+                        {{ .Title }}
+                    </h2>
+                    
+                    <p class="text-gray-600 mb-4">
+                        {{ .Summary | default .Description }}
+                    </p>
+                    
+                    {{ if .Params.tags }}
+                    <div class="flex flex-wrap gap-2 font-mono mt-4">
+                        {{ range .Params.tags }}
+                        <span class="bg-gray-50 text-xs px-2 py-1 rounded border text-gray-500">{{ . }}</span>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                </div>
+
+                <div class="text-gray-300 group-hover:text-gray-800 transition flex-shrink-0">
+                    <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                </div>
+            </div>
+        </a>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans leading-normal tracking-normal flex flex-col min-h-screen">
+    
+    <header class="container mx-auto px-6 py-5 border-b border-gray-200 relative">
+        <nav class="flex justify-between items-center">
+            <a href="{{ "/" | relURL }}" class="text-xl font-bold font-mono text-gray-800">Antoni_Góralewski</a>
+            
+            <button id="menu-toggle" class="text-gray-800 hover:text-blue-600 transition focus:outline-none" aria-label="Otwórz menu">
+                <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </nav>
+
+        <ul id="main-menu" class="hidden absolute right-6 top-16 bg-white border border-gray-200 rounded-b-lg shadow-lg w-48 font-mono text-sm z-50 divide-y divide-gray-100">
+            <li><a href="{{ "/o-mnie/" | relURL }}" class="block px-6 py-3 hover:bg-gray-50 hover:text-blue-600 transition">O mnie</a></li>
+            <li><a href="{{ "/projekty/" | relURL }}" class="block px-6 py-3 hover:bg-gray-50 hover:text-blue-600 transition">Projekty</a></li>
+            <li><a href="{{ "/kontakt/" | relURL }}" class="block px-6 py-3 hover:bg-gray-50 hover:text-blue-600 transition">Kontakt</a></li>
+        </ul>
+    </header>
+
+    <main class="container mx-auto px-6 py-10 flex-grow">
+        {{ block "main" . }}{{ end }}
+    </main>
+
+ <footer class="container mx-auto px-6 py-6 border-t border-gray-200 flex flex-col items-center gap-4 text-xs font-mono text-gray-500">
+        
+        <!-- Ikony społecznościowe -->
+        <div class="flex space-x-6 text-gray-400">
+            <!-- Instagram -->
+            <a href="https://instagram.com/twoj-profil" target="_blank" rel="noopener noreferrer" class="hover:text-pink-600 transition" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+            </a>
+            
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/twoj-profil" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 transition" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/twoj-profil" target="_blank" rel="noopener noreferrer" class="hover:text-gray-900 transition" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+            </a>
+        </div>
+
+        <div>&copy; {{ now.Year }} Antoni Góralewski. Wygenerowano statycznie za pomocą Hugo.</div>
+    </footer> 
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.getElementById('menu-toggle');
+            const menu = document.getElementById('main-menu');
+            
+            toggle.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

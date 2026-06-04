@@ -1,0 +1,54 @@
+{{ define "main" }}
+<section class="mb-16 flex flex-col md:flex-row items-center md:items-start gap-8">
+    
+    <div class="flex-shrink-0">
+        <img src="{{ "img/rel.png" | relURL }}" 
+             alt="Antoni Góralewski" 
+             class="w-32 h-40 md:w-40 md:h-52 object-cover rounded-md border border-gray-300 shadow-sm bg-gray-200"
+             onerror="this.src='https://via.placeholder.com/160x208?text=Zdj%C4%99cie'">
+    </div>
+
+    <div>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">Inżynieria, Automatyka i Dźwięk.</h1>
+        <p class="text-lg text-gray-600 max-w-2xl font-mono">
+            Portfolio projektów z zakresu mechatroniki, programowania PLC (S7-1200), administracji systemami UNIX oraz produkcji radiowej.
+        </p>
+    </div>
+
+</section>
+
+<section>
+    <h2 class="text-2xl font-bold mb-6 border-b pb-2 text-gray-800">Wybrane realizacje</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <article class="border border-gray-200 rounded-lg p-5 bg-white shadow-sm hover:shadow-md transition">
+            <h3 class="font-bold text-xl mb-2"><a href="#" class="hover:text-blue-600">Skaner oparty o infrastrukturę drukarki 3D</a></h3>
+            <p class="text-sm text-gray-600 mb-4">Projekt mechatroniczny wykorzystujący kinematykę drukarek 3D do precyzyjnego skanowania przestrzennego.</p>
+            <div class="flex flex-wrap gap-2 font-mono">
+                <span class="bg-gray-100 text-xs px-2 py-1 rounded border">Mechatronika</span>
+                <span class="bg-gray-100 text-xs px-2 py-1 rounded border">Kinematyka</span>
+            </div>
+        </article>
+
+        <article class="border border-gray-200 rounded-lg p-5 bg-white shadow-sm hover:shadow-md transition">
+            <h3 class="font-bold text-xl mb-2"><a href="#" class="hover:text-blue-600">Automatyzacja S7-1200</a></h3>
+            <p class="text-sm text-gray-600 mb-4">Programowanie sterowników PLC, optymalizacja parametrów napędów i płaskie schematy inżynierskie.</p>
+            <div class="flex flex-wrap gap-2 font-mono">
+                <span class="bg-gray-100 text-xs px-2 py-1 rounded border">PLC</span>
+                <span class="bg-gray-100 text-xs px-2 py-1 rounded border">Siemens</span>
+            </div>
+        </article>
+
+        <article class="border border-gray-200 rounded-lg p-5 bg-white shadow-sm hover:shadow-md transition">
+            <h3 class="font-bold text-xl mb-2"><a href="#" class="hover:text-blue-600">Produkcja Radiowa i Audio</a></h3>
+            <p class="text-sm text-gray-600 mb-4">Realizacja dźwięku, zaawansowane techniki kompresji i masteringu. Szkolenia warsztatowe.</p>
+            <div class="flex flex-wrap gap-2 font-mono">
+                <span class="bg-gray-100 text-xs px-2 py-1 rounded border">Audio</span>
+                <span class="bg-gray-100 text-xs px-2 py-1 rounded border">Media</span>
+            </div>
+        </article>
+
+    </div>  
+</section>
+{{ end }}
