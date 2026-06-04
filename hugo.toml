@@ -1,7 +1,7 @@
-baseURL = 'https://twojadomena.pl/'
-languageCode = 'pl-PL'
-title = 'Antoni Góralewski | Portfolio'
-# Zostaw puste, jeśli budujesz layout bezpośrednio w folderze /layouts/
+baseURL = "https://RIPPINors.github.io/portfolio/"
+canonifyURLs = true
+languageCode = "pl-pl"
+title = "Antoni Góralewski"
 
 # Włączenie trybu bezpiecznego dla HTML w Markdownie (przydaje się przy osadzaniu np. iframe z wideo czy audio)
 [markup.goldmark.renderer]
