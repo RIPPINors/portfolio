@@ -1,5 +1,6 @@
 baseURL = "https://RIPPINors.github.io/portfolio/"
-canonifyURLs = true
+relativeURLs = true
+canonifyURLs = false
 languageCode = "pl-pl"
 title = "Antoni Góralewski"
 
@@ -21,19 +22,19 @@ unsafe = true
   [[menu.main]]
     identifier = "about"
     name = "O mnie"
-    url = "/o-mnie/"
+    url = "/portfolio/o-mnie/"
     weight = 10
 
   [[menu.main]]
     identifier = "projects"
     name = "Projekty"
-    url = "/projekty/"
+    url = "/portfolio/projekty/"
     weight = 20
 
   [[menu.main]]
     identifier = "contact"
     name = "Kontakt"
-    url = "/kontakt/"
+    url = "/portfolio/kontakt/"
     weight = 30
 
 

@@ -35,7 +35,7 @@ jobs:
         id: pages
         uses: actions/configure-pages@v4
       - name: Build with Hugo
-        run: hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+        run: hugo --minify --baseURL "https://RIPPINors.github.io/portfolio/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
